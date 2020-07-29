@@ -4,5 +4,4 @@
     "blackout": ["restrict", "restriction"],
     "kill": ["stop"],
     "master": ["primary", "controller"],
-    "main": ["lauda"]
 }
