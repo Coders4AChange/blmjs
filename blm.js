@@ -10,11 +10,13 @@ const getPromptAsync = promisify(prompt.get);
 async function main() {
     program.version("0.0.1");
     program
+        .option("-f, --file <file>", "File to transform")
         .option("-d, --directory <dir>", "Directory to traverse")
         .option("-w, --wordsFile <file>", "Words File")
         .option("-r, --replaceAll", "Replace all instances")
         .parse(process.argv);
 
+    const file_ = _.get(program, "file", null);
     const directory = _.get(program, "directory", "./");
     const wordsFile = _.get(program, "wordsFile");
     const replaceAll = _.get(program, "replaceAll", false);
@@ -22,7 +24,12 @@ async function main() {
     const blm = new BLM();
     await blm.use(wordsFile);
 
-    const fPaths = await blm.traverse(directory);
+    let fPaths = [];
+    if (_.isNil(file_)) {
+        fPaths = await blm.traverse(directory);
+    } else {
+        fPaths = [file_];
+    }
 
     const property = {
         name: "yesno",
