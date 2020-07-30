@@ -7,6 +7,9 @@ const { BLM } = require("./lib/blm");
 
 const getPromptAsync = promisify(prompt.get);
 
+/**
+ * Main driver function
+ */
 async function main() {
     program.version("0.0.1");
     program
