@@ -3,5 +3,5 @@
     "blacklist": ["denylist", "block"],
     "blackout": ["restrict", "restriction"],
     "kill": ["stop"],
-    "master": ["primary", "controller"],
+    "master": ["primary", "controller"]
 }
