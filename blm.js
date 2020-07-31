@@ -7,31 +7,48 @@ const { BLM } = require("./lib/blm");
 
 const getPromptAsync = promisify(prompt.get);
 
+function initialise() {
+    program.version("0.0.1");
+    program
+        .option("-j, --json", "Dump changes as json", false)
+        .option("-f, --file <file>", "File to transform", null)
+        .option("-d, --directory <dir>", "Directory to traverse", "./")
+        .option("-w, --wordsFile <file>", "Words File")
+        .option("-r, --replaceAll", "Replace all instances", false)
+        .option("-v, --verbose", "Verbosity of JSON output", false)
+        .option("-s, --summary", "Summary", true)
+        .parse(process.argv);
+
+    process.on("SIGINT", function () {
+        console.log("Terminating...");
+        process.exit();
+    });
+}
+
 /**
  * Main driver function
  */
 async function main() {
-    program.version("0.0.1");
-    program
-        .option("-f, --file <file>", "File to transform")
-        .option("-d, --directory <dir>", "Directory to traverse")
-        .option("-w, --wordsFile <file>", "Words File")
-        .option("-r, --replaceAll", "Replace all instances")
-        .parse(process.argv);
-
-    const file_ = _.get(program, "file", null);
-    const directory = _.get(program, "directory", "./");
-    const wordsFile = _.get(program, "wordsFile");
-    const replaceAll = _.get(program, "replaceAll", false);
+    initialise();
 
     const blm = new BLM();
-    await blm.use(wordsFile);
+    await blm.use(program.wordsFile);
 
     let fPaths = [];
-    if (_.isNil(file_)) {
-        fPaths = await blm.traverse(directory);
+    if (_.isNil(program.file_)) {
+        fPaths = await blm.traverse(program.directory);
     } else {
         fPaths = [file_];
+    }
+
+    if (program.summary) {
+        await blm.printSummary(fPaths);
+        return;
+    }
+
+    if (program.json) {
+        await blm.dumpJSON(fPaths, program.verbose);
+        return;
     }
 
     const property = {
@@ -42,12 +59,17 @@ async function main() {
         default: "no",
     };
 
-    if (replaceAll === false) {
-        prompt.start();
+    if (program.replaceAll === false) {
+        prompt.start({ noHandleSIGINT: true });
 
         for (const fPath of fPaths) {
             console.log(`\nProcessing file ${fPath}`);
-            const result = await getPromptAsync(property);
+            try {
+                const result = await getPromptAsync(property);
+            } catch (err) {
+                console.log(`\nTerminating... ${err}`);
+                return;
+            }
 
             if (/y[es]*/.test(result.yesno)) {
                 await blm.replace(fPath, wordsFile);
@@ -57,7 +79,7 @@ async function main() {
         }
     } else {
         for (const fPath of fPaths) {
-            await blm.replace(fPath, replaceAll);
+            await blm.replace(fPath, program.replaceAll);
         }
     }
 }

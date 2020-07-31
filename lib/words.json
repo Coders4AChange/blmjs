@@ -3,5 +3,9 @@
     "blacklist": ["denylist", "block"],
     "blackout": ["restrict", "restriction"],
     "kill": ["stop"],
-    "master": ["primary", "controller"]
+    "master": ["primary", "controller"],
+    "slave": ["replica", "secondary"],
+    "whitelist": ["allowlist", "safelist"],
+    "segregate": ["separate"],
+    "man hour": ["engineer hour", "worker hour"]
 }
