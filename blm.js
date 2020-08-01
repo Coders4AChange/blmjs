@@ -31,14 +31,14 @@ function initialise() {
 async function main() {
     initialise();
 
-    const blm = new BLM();
-    await blm.use(program.wordsFile);
+    let blm = new BLM();
+    blm = await blm.use(program.wordsFile);
 
     let fPaths = [];
     if (_.isNil(program.file_)) {
-        fPaths = await blm.traverse(program.directory);
+        blm = await blm.withDirectory(program.directory);
     } else {
-        fPaths = [file_];
+        blm = blm.withFile(program.file);
     }
 
     if (program.summary) {
