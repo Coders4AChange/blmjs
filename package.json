@@ -8,17 +8,17 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/arun-94/blm.git"
+    "url": "git+https://github.com/Coders4ACause/blmjs.git"
   },
   "keywords": [
     "BLM"
   ],
-  "author": "",
+  "author": "Coders4ACause",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/arun-94/blm/issues"
+    "url": "https://github.com/Coders4ACause4/blmjs/issues"
   },
-  "homepage": "https://github.com/arun-94/blm#readme",
+  "homepage": "https://github.com/Coders4ACause/blmjs#readme",
   "dependencies": {
     "app-root-path": "^3.0.0",
     "commander": "^6.0.0",
@@ -26,7 +26,7 @@
     "prompt": "^1.0.0"
   },
   "devDependencies": {
-    "eslint": "^7.5.0",
+    "eslint": "^7.6.0",
     "eslint-config-google": "^0.14.0",
     "jest": "^26.2.2",
     "mock-fs": "^4.12.0"
