@@ -6,8 +6,8 @@ function initialise() {
     program
         .option("-i, --interactive", "Replace interactively", false)
         .option("-j, --json", "Dump changes as json", false)
-        .option("-p, --path <path>", "Path (File/Dir) to transform", null)
-        .option("-w, --wordsFile <file>", "Words File")
+        .option("-p, --path <path>", "Path (File/Dir) to transform", "./")
+        .option("-w, --wordsFile <file>", "Words File", "./lib/words.json")
         .option("-r, --replaceAll", "Replace all instances", false)
         .option("-v, --verbose", "Verbosity of JSON output", false)
         .option("-s, --summary", "Summary", true)
