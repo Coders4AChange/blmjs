@@ -4,7 +4,7 @@
   "description": "Replace insensitive words in a repository",
   "main": "blm.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "jest"
   },
   "repository": {
     "type": "git",
@@ -20,12 +20,15 @@
   },
   "homepage": "https://github.com/arun-94/blm#readme",
   "dependencies": {
+    "app-root-path": "^3.0.0",
     "commander": "^6.0.0",
     "lodash": "^4.17.19",
     "prompt": "^1.0.0"
   },
   "devDependencies": {
     "eslint": "^7.5.0",
-    "eslint-config-google": "^0.14.0"
+    "eslint-config-google": "^0.14.0",
+    "jest": "^26.2.2",
+    "mock-fs": "^4.12.0"
   }
 }
