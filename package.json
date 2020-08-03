@@ -1,6 +1,6 @@
 {
-  "name": "@Coders4ACause/blmjs",
-  "version": "0.0.1",
+  "name": "@coders4acause/blmjs",
+  "version": "0.0.2",
   "description": "Replace insensitive words in a repository",
   "main": "blm.js",
   "scripts": {
@@ -16,7 +16,9 @@
     "bias",
     "filter"
   ],
-  "publishConfig": { "registry": "https://npm.pkg.github.com/" },
+  "publishConfig": {
+    "registry": "https://npm.pkg.github.com/"
+  },
   "author": "Coders4ACause",
   "license": "ISC",
   "bugs": {
@@ -34,5 +36,8 @@
     "eslint-config-google": "^0.14.0",
     "jest": "^26.2.2",
     "mock-fs": "^4.12.0"
+  },
+  "directories": {
+    "lib": "lib"
   }
 }
