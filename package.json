@@ -1,5 +1,5 @@
 {
-  "name": "blm",
+  "name": "blmjs",
   "version": "0.0.1",
   "description": "Replace insensitive words in a repository",
   "main": "blm.js",
@@ -11,8 +11,12 @@
     "url": "git+https://github.com/Coders4ACause/blmjs.git"
   },
   "keywords": [
-    "BLM"
+    "blm",
+    "javascript",
+    "bias",
+    "filter"
   ],
+  "publishConfig": { "registry": "https://npm.pkg.github.com/" },
   "author": "Coders4ACause",
   "license": "ISC",
   "bugs": {
