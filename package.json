@@ -1,6 +1,6 @@
 {
-  "name": "@coders4acause/blmjs",
-  "version": "0.0.2",
+  "name": "@coders4achange/blmjs",
+  "version": "0.0.1",
   "description": "Replace insensitive words in a repository",
   "main": "blm.js",
   "scripts": {
@@ -8,7 +8,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/Coders4ACause/blmjs.git"
+    "url": "git+https://github.com/Coders4AChange/blmjs.git"
   },
   "keywords": [
     "blm",
@@ -16,15 +16,12 @@
     "bias",
     "filter"
   ],
-  "publishConfig": {
-    "registry": "https://npm.pkg.github.com/"
-  },
-  "author": "Coders4ACause",
+  "author": "Coders4AChange",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/Coders4ACause4/blmjs/issues"
+    "url": "https://github.com/Coders4AChange4/blmjs/issues"
   },
-  "homepage": "https://github.com/Coders4ACause/blmjs#readme",
+  "homepage": "https://github.com/Coders4AChange/blmjs#readme",
   "dependencies": {
     "app-root-path": "^3.0.0",
     "commander": "^6.0.0",
