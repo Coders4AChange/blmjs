@@ -1,5 +1,5 @@
 {
-  "name": "blmjs",
+  "name": "@Coders4ACause/blmjs",
   "version": "0.0.1",
   "description": "Replace insensitive words in a repository",
   "main": "blm.js",
