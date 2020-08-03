@@ -1,3 +1,5 @@
+[![npm version](https://badge.fury.io/js/%40coders4achange%2Fblmjs.svg)](https://badge.fury.io/js/%40coders4achange%2Fblmjs)
+
 # BLM
 
 This repository has blm.js package which can be leveraged as a commandline tool and javascript package to remove objectionable words from the code repositories, files and directories. Furthermore, it also provides a dictionary of objectionable words and alternatives that can be used for those words, this library can be edited and extended as per the requirement of user.
