@@ -12,7 +12,7 @@ This library and tool allows users to view the occurences of problematic words, 
 
 ## INSTALLATION
 
-`npm install blm`
+`npm install @coders4acause/blmjs@0.0.1`
 
 ## USAGE
 
